@@ -1,1 +1,48 @@
+const express = require ("express")
+const app = express()
+const port = 3000
 
+const workers = [
+        {
+            Id: 1,
+            Name: "Maxim",
+            Surname: "Siryk",
+            PhoneNumber: "8-999-999-99-99",
+            Email: sirykmgmail.com
+        },
+
+        {
+            Id: 2,
+            Name: "Vladimir",
+            Surname: "Volosnikov",
+            PhoneNumber: "8-908-88-93-99",
+            Email: vladimirvgmail.com
+        },
+
+        {
+            Id: 3,
+            Name: "Alexandr",
+            Surname: "Surikov",
+            PhoneNumber: "8-912-911-99-80",
+            Email: ssurikgmail.com
+        },
+
+        {
+            Id: 4,
+            Name: "Umar",
+            Surname: "Yusufov",
+            PhoneNumber: "8-922-777-99-79",
+            Email: umarugmail.com
+        }
+]
+
+app.get( '/', (req,res) => {
+    res.set({
+        "content-type": "application/json",
+    })
+    res.json (JSON.stringify(workers))
+ })
+ 
+ app.listen(port, () => {
+    console.log(Мы начали прослушивать ${port} порт.)
+ })
